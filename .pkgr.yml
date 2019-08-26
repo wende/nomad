@@ -38,6 +38,17 @@ targets:
     build_dependencies:
       - libimlib2
       - libimlib2-dev
+  debian-10:
+    dependencies:
+      - curl
+      - elasticsearch
+      - nginx|apache2
+      - postgresql|mariadb-server|sqlite
+      - libimlib2
+      - libimlib2-dev
+    build_dependencies:
+      - libimlib2
+      - libimlib2-dev
   ubuntu-16.04:
     dependencies:
       - curl
@@ -67,17 +78,6 @@ targets:
       - nginx
       - postgresql-server
       - imlib2
-      - imlib2-devel
-    build_dependencies:
-      - imlib2
-      - imlib2-devel
-  sles-12:
-    dependencies:
-      - curl
-      - elasticsearch
-      - nginx
-      - postgresql-server
-      - imlib2
       - libImlib2-1
       - imlib2
       - imlib2-devel
@@ -86,6 +86,7 @@ targets:
       - https://ftp.gwdg.de/pub/opensuse/discontinued/distribution/12.3/repo/oss/suse/x86_64/imlib2-devel-1.4.5-12.1.1.x86_64.rpm
       - https://ftp.gwdg.de/pub/opensuse/discontinued/distribution/12.3/repo/oss/suse/x86_64/imlib2-filters-1.4.5-12.1.1.x86_64.rpm
       - https://ftp.gwdg.de/pub/opensuse/discontinued/distribution/12.3/repo/oss/suse/x86_64/libImlib2-1-1.4.5-12.1.1.x86_64.rpm
+
 before:
   - contrib/packager.io/before.sh
 after:
